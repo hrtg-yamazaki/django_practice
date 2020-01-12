@@ -4,4 +4,7 @@
     {% for article in object_list %}
         <p><a href='{% url "practice:detail" article.pk %}'>{{ article.title }}</a></p>
     {% endfor %}
+    
+    <a href='{% url "practice:create" %}'>記事を投稿する</a>
+
 {% endblock %}
