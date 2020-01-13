@@ -5,6 +5,8 @@
         <p><a href='{% url "practice:detail" article.pk %}'>{{ article.title }}</a></p>
     {% endfor %}
     
-    <a href='{% url "practice:create" %}'>記事を投稿する</a>
+    {% if user.is_authenticated %}
+        <a href='{% url "practice:create" %}'>記事を投稿する</a>
+    {% endif %}
 
 {% endblock %}
