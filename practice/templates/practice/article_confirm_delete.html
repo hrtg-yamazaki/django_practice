@@ -1,0 +1,11 @@
+{% extends './base.html' %}
+{% block content %}
+    <h1>記事の削除</h1>
+    <p>{{ object.title }}を削除してよろしいですか？</p>
+    <form action='' method='post'>
+        {% csrf_token %}
+        <button type='submit' class='submit delete'>削除</button>
+    </form>
+    
+    <a href='Javascript:history.back()'>戻る</a>
+{% endblock %}
