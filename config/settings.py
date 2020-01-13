@@ -56,7 +56,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -136,3 +136,5 @@ SASS_PROCESSOR_INCLUDE_FILE_PATTERN = r'^.+\.(scss)$'
 SASS_PRECISION = 8
 SASS_OUTPUT_STYLE = 'compressed'
 SASS_TEMPLATE_EXTS = ['.html']
+
+LOGIN_REDIRECT_URL = '/'

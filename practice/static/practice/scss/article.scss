@@ -1,7 +1,72 @@
-body{
-  padding: 80px;
+*{
+  box-sizing: border-box;
+  font-family: "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+}
+
+html, body{
+  width: 100%;
+  height: 100%;
+}
+
+.clearfix:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+h1{
+  font-size: 18px;
+  font-weight: bold;
 }
 
 p{
   color: red;
 }
+
+.header{
+  height: 50px;
+  width: 100%;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  &__box{
+    padding: 10px;
+    &__left{
+      float: left;
+    }
+    &__right{
+      float: right;
+    }
+  }
+}
+
+.header-logo{
+  line-height: 30px;
+  font-size: 20px;
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+.header-logo:hover{
+  color: blue;
+}
+
+.header-link{
+  line-height: 30px;
+  font-size: 16px;
+  color: white;
+  text-decoration: none;
+}
+
+.header-link:hover{
+  color: blue;
+}
+
+.main-contents{
+  margin-top: 50px;
+  &__box{
+    padding: 20px;
+  }
+}
+
