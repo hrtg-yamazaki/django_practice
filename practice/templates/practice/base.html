@@ -21,6 +21,7 @@
                     <a href='{% url "logout" %}' class='header-link'>ログアウト</a>
                 {% else %}
                     <a href='{% url "login" %}' class='header-link'>ログイン</a>
+                    <a href='{% url "accounts:signup" %}' class="header-link">新規登録</a>
                 {% endif %}
             </div>
         </div>
