@@ -3,11 +3,16 @@
     <h1>{{ article.title }}</h1>
     <span>{{ article.created_at }}</span>
     <p>{{ article.content }}</p>
-
-    <a href='{% url "practice:index" %}'>TOPページへ</a>
-    {% if request.user.id == object.author_id %}
-        <a href='{% url "practice:update" article.pk %}'>記事の編集</a>
-        <a href='{% url "practice:delete" article.pk %}'>記事の削除</a>
+    {% if article.image %}
+        <img src='{{ article.image.url }}' alt='{{ article.title }}'>
     {% endif %}
+
+    <div>
+      <a href='{% url "practice:index" %}'>TOPページへ</a>
+      {% if request.user.id == object.author_id %}
+          <a href='{% url "practice:update" article.pk %}'>記事の編集</a>
+          <a href='{% url "practice:delete" article.pk %}'>記事の削除</a>
+      {% endif %}
+    </div>
 
 {% endblock %}
