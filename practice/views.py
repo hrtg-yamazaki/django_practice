@@ -14,8 +14,10 @@ class IndexView(generic.ListView, SearchForm):
     def get_queryset(self):
         return super().get_queryset().order_by('-created_at')
 
+
 class DetailView(generic.DetailView):
     model = Article
+
 
 class CreateView(LoginRequiredMixin, generic.edit.CreateView):
     model = Article
@@ -24,6 +26,7 @@ class CreateView(LoginRequiredMixin, generic.edit.CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super(CreateView, self).form_valid(form)
+
 
 class UpdateView(LoginRequiredMixin, generic.edit.UpdateView):
     model = Article
@@ -35,9 +38,11 @@ class UpdateView(LoginRequiredMixin, generic.edit.UpdateView):
             raise PermissionDenied('編集権限がありません')
         return super(UpdateView, self).dispatch(request, *args, **kwargs)
 
+
 class DeleteView(LoginRequiredMixin, generic.edit.DeleteView):
     model = Article
     success_url = reverse_lazy('practice:index')
+
 
 def search(request):
     searchForm = SearchForm(request.GET)

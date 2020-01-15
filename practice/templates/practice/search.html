@@ -1,5 +1,7 @@
 {% extends "layout.html" %}
+
 {% block content %}
+
     <h1>{{ message }}</h1>
 
     {% if searchForm %}
@@ -21,6 +23,5 @@
             <h2>{{ comment }}</h2>
         {% endif %}
     {% endif %}
-
-
+    
 {% endblock %}
