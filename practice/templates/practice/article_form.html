@@ -1,4 +1,4 @@
-{% extends './base.html' %}
+{% extends 'layout.html' %}
 {% block content %}
     <h1>記事を{{ object|yesno:'更新,作成' }}する</h1>
     <form action="" method="post" enctype="multipart/form-data">

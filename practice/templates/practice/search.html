@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>{{ message }}</h1>
+
+    {% if searchForm %}
+        <form action='{% url "practice:search" %}' method='get'>
+            <div>
+                {{ searchForm }}
+                <input type='submit' value='検索'>
+                <a href='{% url "practice:search" %}'>クリア</a>
+            </div>
+        </form>
+    {% endif %}
+
+    {% if object_list %}
+        {% for article in object_list %}
+            <p><a href='{% url "practice:detail" article.pk %}'>{{ article.title }}</a></p>
+        {% endfor %}
+    {% else %}
+        {% if comment %}
+            <h2>{{ comment }}</h2>
+        {% endif %}
+    {% endif %}
+
+
+{% endblock %}
